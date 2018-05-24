@@ -12,37 +12,26 @@
         <!--어디를?-->
         <scene sceneID="UTP-Fg-Uqm">
             <objects>
-                <tableViewController id="3Yz-vN-AYY" customClass="WhereViewController" sceneMemberID="viewController">
+                <tableViewController id="3Yz-vN-AYY" customClass="WhereTableViewController" customModule="TriPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Man-Sy-YXC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="EG1-80-5JG">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="XkA-OO-9Un">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="3Yz-vN-AYY" id="XrQ-AU-F6w"/>
+                            </connections>
+                        </searchBar>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="ugW-Qu-GtQ">
+                            <rect key="frame" x="0.0" y="514" width="375" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Fv3-Cw-mq9">
-                                    <rect key="frame" x="0.0" y="0.0" width="331" height="44"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <scopeButtonTitles>
-                                        <string>Title</string>
-                                        <string>Title</string>
-                                    </scopeButtonTitles>
-                                    <connections>
-                                        <outlet property="delegate" destination="3Yz-vN-AYY" id="W9W-he-Kf4"/>
-                                    </connections>
-                                </searchBar>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5B-bB-dDQ">
-                                    <rect key="frame" x="331" y="0.0" width="44" height="44"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="44" id="4nf-yy-X9P"/>
-                                        <constraint firstAttribute="width" constant="44" id="59Y-dj-PRk"/>
-                                    </constraints>
-                                </button>
-                            </subviews>
-                        </stackView>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="q17-b1-vUf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="q17-b1-vUf" customClass="CityTableViewCell" customModule="TriPlanner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q17-b1-vUf" id="1NE-Oq-Q5J">
@@ -52,8 +41,8 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKt-WU-jxu">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5y-jd-UzW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="12" height="43.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="No" text="No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5y-jd-UzW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="43.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="U7w-SS-2sm"/>
                                                     </constraints>
@@ -61,18 +50,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="London, UK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zl-nt-0Qw">
-                                                    <rect key="frame" x="12" y="0.0" width="333" height="43.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" restorationIdentifier="City" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zl-nt-0Qw">
+                                                    <rect key="frame" x="22" y="0.0" width="307" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1E-jm-xa5">
-                                                    <rect key="frame" x="345" y="0.0" width="30" height="43.5"/>
+                                                <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1E-jm-xa5">
+                                                    <rect key="frame" x="329" y="0.0" width="46" height="43.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="UZ9-4m-M7Q"/>
                                                     </constraints>
-                                                    <state key="normal" title="Del"/>
+                                                    <state key="normal" title="Button"/>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -84,6 +73,11 @@
                                         <constraint firstAttribute="bottom" secondItem="uKt-WU-jxu" secondAttribute="bottom" id="wEA-Gs-bcK"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="Button" destination="r1E-jm-xa5" id="cxU-BK-8HW"/>
+                                    <outlet property="City" destination="1Zl-nt-0Qw" id="Ohd-mf-jBi"/>
+                                    <outlet property="No" destination="C5y-jd-UzW" id="ain-HH-Xr0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -93,17 +87,18 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="어디를?" id="Mal-63-8XR"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="5bz-BZ-wM9" id="2bV-nt-bUb"/>
+                        <outlet property="searchDisplayController" destination="eiU-RW-rZA" id="NVA-NC-YlW"/>
+                        <outlet property="tableview" destination="Man-Sy-YXC" id="1UU-Da-Vyi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVk-sy-VAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="5bz-BZ-wM9">
+                <searchDisplayController id="eiU-RW-rZA">
                     <connections>
-                        <outlet property="delegate" destination="3Yz-vN-AYY" id="YgM-YG-Q4I"/>
-                        <outlet property="searchBar" destination="Fv3-Cw-mq9" id="duf-C4-bGU"/>
-                        <outlet property="searchContentsController" destination="3Yz-vN-AYY" id="6mv-ZT-4oP"/>
-                        <outlet property="searchResultsDataSource" destination="3Yz-vN-AYY" id="25e-VG-fPx"/>
-                        <outlet property="searchResultsDelegate" destination="3Yz-vN-AYY" id="c4i-oh-3yV"/>
+                        <outlet property="delegate" destination="3Yz-vN-AYY" id="hNx-Uk-age"/>
+                        <outlet property="searchBar" destination="XkA-OO-9Un" id="i70-F8-9TC"/>
+                        <outlet property="searchContentsController" destination="3Yz-vN-AYY" id="sy3-3c-sDX"/>
+                        <outlet property="searchResultsDataSource" destination="3Yz-vN-AYY" id="Ej6-7c-SEN"/>
+                        <outlet property="searchResultsDelegate" destination="3Yz-vN-AYY" id="BSW-Ih-6db"/>
                     </connections>
                 </searchDisplayController>
             </objects>

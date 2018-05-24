@@ -15,7 +15,9 @@
 		5448D6E820AD51DA007EA38F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5448D6E620AD51DA007EA38F /* LaunchScreen.storyboard */; };
 		5448D6F320AD51DA007EA38F /* TriPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448D6F220AD51DA007EA38F /* TriPlannerTests.swift */; };
 		5448D6FE20AD51DA007EA38F /* TriPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448D6FD20AD51DA007EA38F /* TriPlannerUITests.swift */; };
-		5448D70C20AD800C007EA38F /* WhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5448D70B20AD800C007EA38F /* WhereViewController.swift */; };
+		548A783A20B6875B001D2535 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A783920B6875B001D2535 /* TableViewController.swift */; };
+		548A783E20B68924001D2535 /* WhereTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A783D20B68924001D2535 /* WhereTableViewController.swift */; };
+		548A784120B690D8001D2535 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A784020B690D8001D2535 /* CityTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,9 @@
 		5448D6F920AD51DA007EA38F /* TriPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5448D6FD20AD51DA007EA38F /* TriPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriPlannerUITests.swift; sourceTree = "<group>"; };
 		5448D6FF20AD51DA007EA38F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5448D70B20AD800C007EA38F /* WhereViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereViewController.swift; sourceTree = "<group>"; };
+		548A783920B6875B001D2535 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		548A783D20B68924001D2535 /* WhereTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereTableViewController.swift; sourceTree = "<group>"; };
+		548A784020B690D8001D2535 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		5448D6CF20AD51D9007EA38F = {
 			isa = PBXGroup;
 			children = (
+				548A783920B6875B001D2535 /* TableViewController.swift */,
 				5448D6DA20AD51D9007EA38F /* TriPlanner */,
 				5448D6F120AD51DA007EA38F /* TriPlannerTests */,
 				5448D6FC20AD51DA007EA38F /* TriPlannerUITests */,
@@ -101,11 +106,11 @@
 		5448D6DA20AD51D9007EA38F /* TriPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				548A783F20B68967001D2535 /* city */,
 				5448D6DB20AD51D9007EA38F /* AppDelegate.swift */,
 				5448D6DD20AD51D9007EA38F /* FirstViewController.swift */,
 				5448D6DF20AD51D9007EA38F /* SecondViewController.swift */,
 				5448D6E120AD51D9007EA38F /* Main.storyboard */,
-				5448D70B20AD800C007EA38F /* WhereViewController.swift */,
 				5448D6E420AD51DA007EA38F /* Assets.xcassets */,
 				5448D6E620AD51DA007EA38F /* LaunchScreen.storyboard */,
 				5448D6E920AD51DA007EA38F /* Info.plist */,
@@ -129,6 +134,15 @@
 				5448D6FF20AD51DA007EA38F /* Info.plist */,
 			);
 			path = TriPlannerUITests;
+			sourceTree = "<group>";
+		};
+		548A783F20B68967001D2535 /* city */ = {
+			isa = PBXGroup;
+			children = (
+				548A783D20B68924001D2535 /* WhereTableViewController.swift */,
+				548A784020B690D8001D2535 /* CityTableViewCell.swift */,
+			);
+			path = city;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				548A784120B690D8001D2535 /* CityTableViewCell.swift in Sources */,
 				5448D6E020AD51D9007EA38F /* SecondViewController.swift in Sources */,
+				548A783A20B6875B001D2535 /* TableViewController.swift in Sources */,
 				5448D6DC20AD51D9007EA38F /* AppDelegate.swift in Sources */,
-				5448D70C20AD800C007EA38F /* WhereViewController.swift in Sources */,
 				5448D6DE20AD51D9007EA38F /* FirstViewController.swift in Sources */,
+				548A783E20B68924001D2535 /* WhereTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
